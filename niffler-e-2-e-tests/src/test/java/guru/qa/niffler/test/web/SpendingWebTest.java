@@ -32,6 +32,8 @@ public class SpendingWebTest {
         .save();
 
     new MainPage().checkThatTableContainsSpending(newDescription);
+
+    System.out.println("Ensuring commits are working");
   }
 }
 
