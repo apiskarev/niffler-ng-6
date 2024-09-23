@@ -21,19 +21,19 @@ public class SpendingWebTest {
       description = "Обучение Advanced 2.0",
       amount = 79990
   )
+
   @Test
   void categoryDescriptionShouldBeChangedFromTable(SpendJson spend) {
     final String newDescription = "Обучение Niffler Next Generation";
 
     Selenide.open(CFG.frontUrl(), LoginPage.class)
-        .login("duck", "12345")
+        .login("duck", "1234")
         .editSpending(spend.description())
         .setNewSpendingDescription(newDescription)
         .save();
 
     new MainPage().checkThatTableContainsSpending(newDescription);
-
-    System.out.println("Ensuring commits are working");
   }
+
 }
 
